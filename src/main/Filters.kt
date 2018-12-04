@@ -1,3 +1,5 @@
+package main
+
 public class Filter{
     private var type : Int = 0
     private var param1 : Int = 0

@@ -1,3 +1,5 @@
+package main
+
 public object Preferences{
     public var parameters : HashMap<String,Int> = HashMap()
 

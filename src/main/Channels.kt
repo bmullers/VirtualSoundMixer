@@ -1,6 +1,11 @@
-public class Channel(val number : Int){
+package main
+
+import main.Filter
+import main.Source
+
+public class Channel(){
     private var source : Source? = null
-    public var name : String = "Channel $number"
+    public var name : String = ""
     private var filter : Filter? = null
 
     fun setSource(s : Source){

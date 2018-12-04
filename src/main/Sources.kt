@@ -1,8 +1,8 @@
-
-public class Source(){
+package main
+public class Source(adress : String){
     public var alSourceId : Int = 0
 
-    fun Source(adress : String){
+    init{
         //CREATE SOURCE
         //CREATE BUFFER
         //LOAD SOUND DATA FROM ADRESS INTO BUFFER
