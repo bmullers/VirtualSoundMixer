@@ -5,7 +5,7 @@ public object Preferences{
 
     private val prefFileAdress = "./prefs.txt"
 
-    fun Preferences(){
+    init{
         //OPEN FILE
         //SET VALUES
     }

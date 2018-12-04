@@ -1,5 +1,6 @@
 package main
 import org.lwjgl.openal.AL
+import org.lwjgl.openal.AL10.*
 import org.lwjgl.openal.ALC
 import org.lwjgl.openal.ALC10.*
 
@@ -22,7 +23,19 @@ fun init(){
     alcMakeContextCurrent(context)
     val alcCapabilities = ALC.createCapabilities(device)
     val alCapabilities = AL.createCapabilities(alcCapabilities)
+
+    alGetError()
 }
 
+fun alCheckError(){
+    val errorCode = alGetError()
+    when(errorCode){
+        AL_INVALID_NAME -> throw Exception("Error : Invalid name")
+        AL_INVALID_ENUM -> throw Exception("Error : Invalid enum")
+        AL_INVALID_VALUE -> throw Exception("Error : Invalid value")
+        AL_INVALID_OPERATION -> throw Exception("Error : Invalid operation")
+        AL_OUT_OF_MEMORY -> throw Exception("Error : Out of memory")
+    }
+}
 //TODO : Function to get list of available device names
 //TODO : Function to switch context from one device to another

@@ -1,13 +1,16 @@
 package main
 
+import org.lwjgl.openal.EXTEfx.alGenFilters
+
 public class Filter{
     private var type : Int = 0
     private var param1 : Int = 0
     private var param2 : Int = 0
-    private val alFilterId : Int = 0
+    private var alFilterId : Int = 0
 
-    fun Filter(){
-        //CREATE FILTER
+    init{
+        alFilterId = alGenFilters()
+        alCheckError()
     }
 
     fun setType(value : Int){
