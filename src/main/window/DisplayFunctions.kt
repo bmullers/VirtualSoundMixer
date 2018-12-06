@@ -3,6 +3,7 @@ package main.window
 import main.Channel
 import main.Effect
 import main.Filter
+import main.Mixer
 import javax.swing.JLabel
 
 fun channelViewer(channel : Channel) : JLabel{
@@ -17,5 +18,9 @@ fun filterViewer(filter : Filter) : JLabel{
 
 fun effectViewer(effect : Effect) : JLabel{
     //TODO : how to display an effect inside a label
+    return JLabel()
+}
+
+fun mixerViewer(mixer : Mixer) : JLabel{
     return JLabel()
 }

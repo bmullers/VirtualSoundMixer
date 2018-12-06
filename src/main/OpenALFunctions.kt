@@ -25,6 +25,7 @@ fun init(){
     val alCapabilities = AL.createCapabilities(alcCapabilities)
 
     alGetError()
+    alListener3f(AL_POSITION,0f,0f,0f)
 }
 
 fun alCheckError(){
