@@ -23,9 +23,12 @@ import org.lwjgl.openal.EXTEfx.*
  * 12 : equalizer
  */
 public class Effect{
-    private var alEffectId : Int = 0
-    //This constructor is really exhaustive
-    //It generates
+    public var alEffectId : Int = AL_EFFECT_NULL
+
+    //Constructor used to generate null effects
+    constructor()
+
+    //Constructor used to
     constructor(type : Int, parameters : Array<Float>?,name : String){
         alEffectId = alGenEffects()
         when(type){
@@ -74,11 +77,19 @@ public class Effect{
 }
 
 public class EffectSlot{
-    public var effectAttached : Effect? = null
+    public var effectAttached : Effect = Effect()
     private var alEffectSlotId : Int = 0
+    public val filter : Filter = Filter()
 
     init{
         alEffectSlotId = alGenAuxiliaryEffectSlots()
         alCheckError()
+        alAuxiliaryEffectSloti(alEffectSlotId,AL_EFFECTSLOT_EFFECT,AL_EFFECT_NULL)
+    }
+
+    //Allows null effects
+    fun attachEffect(effect: Effect){
+        effectAttached = effect
+        alAuxiliaryEffectSloti(alEffectSlotId, AL_EFFECTSLOT_EFFECT, effectAttached.alEffectId)
     }
 }
