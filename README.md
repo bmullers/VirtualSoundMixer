@@ -31,7 +31,7 @@ Effect types supported :
 
 #### Why I work on this project
 
-I started this project as a way to learn Kotlin and get better at using OpenAL and at programming in general. It follows my desire to participate in the [Cunk Stories](https://github.com/Hugobros3/chunkstories) project, which is currently being rewritten in Kotlin.
+I started this project as a way to learn Kotlin and get better at using OpenAL and at programming in general. It follows my desire to participate in the [Chunk Stories](https://github.com/Hugobros3/chunkstories) project, which is currently being rewritten in Kotlin.
 
 #### About this project
 
