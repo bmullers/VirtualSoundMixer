@@ -8,6 +8,15 @@ import org.lwjgl.system.libc.LibCStdlib.*
 public class Source(address : String){
     public var alSourceId : Int = 0
     public var gain : Float = 0.1f
+        set(value){
+            gain = value
+            alSourcef(alSourceId, AL_GAIN,gain)
+        }
+    public var pitch : Float = 1f
+        set(value){
+            pitch = value
+            alSourcef(alSourceId, AL_PITCH,pitch)
+        }
     public var dataBuffer : Int = 0
 
     init{
@@ -46,6 +55,7 @@ public class Source(address : String){
     }
 
     fun deleteSource(){
-        //FREE MEMORY
+        alDeleteSources(alSourceId)
+        alDeleteBuffers(dataBuffer)
     }
 }

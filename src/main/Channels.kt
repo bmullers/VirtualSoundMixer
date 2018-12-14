@@ -12,4 +12,5 @@ public class Channel{
         source?.deleteSource()?: println("Tried to delete a null source")
         source = s
     }
+
 }
